@@ -27,7 +27,7 @@ import { Funnel } from "lucide-react";
 
 export function DataTable({ columns, data }) {
   const [globalFilter, setGlobalFilter] = useState("");
-  const [pageSize, setPageSize] = useState(5);
+  const [pageSize, setPageSize] = useState(10);
   const [rowSelection, setRowSelection] = useState({});
 
   const table = useReactTable({
@@ -49,13 +49,13 @@ export function DataTable({ columns, data }) {
     <div className="space-y-4">
       {/* Search & Select - Responsive Controls */}
       <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
-        <h2 className="w-full sm:w-40 text-sm sm:text-base">Filter by Tag</h2>
+        <h2 className="w-full sm:w-40 text-sm md:text-sm lg:text-base">Filter by Tag</h2>
         <div className="flex flex-col sm:flex-row gap-2 w-full">
           <Input
             placeholder="Tags"
             value={globalFilter ?? ""}
             onChange={(e) => setGlobalFilter(e.target.value)}
-            className="w-full"
+            className="w-full text-xs md:text-sm lg:text-md"
           />
           <div className="flex gap-2">
             <Button 
@@ -63,8 +63,8 @@ export function DataTable({ columns, data }) {
               className="bg-gray-500 hover:bg-gray-600 flex-1 sm:flex-none"
               size="sm"
             >
-              <Funnel className="h-4 w-4 mr-1 sm:mr-2" />
-              <span className="hidden sm:inline">Filter</span>
+              <Funnel className="h-4 w-4" />
+              <span className="hidden sm:inline text-xs md:text-sm lg:text-md">Filter</span>
             </Button>
             <Select
               defaultValue={String(pageSize)}
@@ -77,9 +77,9 @@ export function DataTable({ columns, data }) {
                 <SelectValue placeholder="Show" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="5">5</SelectItem>
                 <SelectItem value="10">10</SelectItem>
                 <SelectItem value="20">20</SelectItem>
+                <SelectItem value="30">30</SelectItem>
               </SelectContent>
             </Select>
           </div>

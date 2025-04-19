@@ -30,15 +30,15 @@ const Modal = () => {
     <section>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button variant="secondary" className="w-full sm:w-auto">
-            <Plus className="w-4 h-4 mr-2" />
+          <Button variant="secondary" className="w-full sm:w-auto text-xs md:text-sm lg:text-md">
+            <Plus className="w-4 h-4"/>
             Add Client
           </Button>
         </DialogTrigger>
         <DialogContent
           className={`
-      w-[95vw] max-w-full  // Mobile-first approach
-      transition-all duration-300 ease-in-out  // Smooth transitions
+      w-[95vw] max-w-full  
+      transition-all duration-300 ease-in-out 
       ${
         showPayment
           ? "sm:max-w-xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl" // payment shown
@@ -61,7 +61,7 @@ const Modal = () => {
           ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3" // payment shown
           : "grid-cols-1 md:grid-cols-2" // payment hidden
       } 
-      gap-6 px-4 sm:px-6 overflow-y-auto max-h-[60vh]`}
+      gap-6 px-4 sm:px-6 overflow-auto max-h-[90vh]`}
           >
             {/* Username & Password Column */}
             <div className="space-y-4 min-w-[250px]">
@@ -122,7 +122,7 @@ const Modal = () => {
                 <Label>Tags</Label>
                 <Input placeholder="Tags" />
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 <Checkbox
                   id="billing"
                   checked={showPayment}

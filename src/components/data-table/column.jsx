@@ -51,7 +51,7 @@ export const columns = [
       const value = getValue();
       return (
         <span
-          className={`w-full px-2 py-1 rounded text-xs font-semibold ${
+          className={`w-full px-2 py-1 rounded text-xs md:text-sm lg:text-sm font-semibold ${
             value === "active"
               ? "bg-green-100 text-green-800"
               : "bg-red-100 text-red-800"
@@ -69,7 +69,7 @@ export const columns = [
       <Button
         variant="secondary"
         size="sm"
-        className="text-sm bg-gray-200 hover:bg-gray-300 transition-colors w-full"
+        className="text-xs md:text-sm lg:text-md bg-gray-200 hover:bg-gray-300 transition-colors w-full"
       >
         Edit
       </Button>
